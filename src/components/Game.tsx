@@ -27,7 +27,7 @@ function Game() {
           <div className="col">
             <div>
               {winner
-                ? `${winner} has won the game!`
+                ? `${winner} has won the game! To play again clik on "Start Game"`
                 : `Next player: ${xIsNext ? 'X' : 'O'}`}
             </div>
 
@@ -96,9 +96,8 @@ function Log(props: LogProps) {
   return (
     <div>
       <ol>
-        const moves ={' '}
         {props.history.map((step, move) => {
-          const desc = move ? 'Go to move #' + move : 'Go to game start';
+          const desc = move ? 'Go to move #' + move : 'Start Game';
           return (
             <li key={move}>
               <button
