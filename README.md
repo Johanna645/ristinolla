@@ -1,3 +1,7 @@
+Work in progress... trying out combination of bootstrap and normal css for the layout
+
+This is a Tic-tac-toe-game with typescript.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
