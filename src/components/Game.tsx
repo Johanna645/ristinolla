@@ -1,7 +1,40 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Log } from './Log';
 import { Board } from './Board';
 import { useGameState } from './GameState';
+
+const StyledHeader = styled.header`
+  background-color: rgb(71, 68, 75);
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+`;
+
+const Row = styled.div`
+  margin-left: 20vh;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+const Text = styled.div`
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 34px;
+`;
 
 function Game() {
   const { gameState, current, xIsNext, jumpTo, winner, handleClick } =
@@ -9,23 +42,19 @@ function Game() {
 
   return (
     <div>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <div>
-              {winner
-                ? `${winner} has won the game! To play again clik on "Start Game"`
-                : `Next player: ${xIsNext ? 'X' : 'O'}`}
-            </div>
+      <StyledHeader>Play Tic-Tac-Toe</StyledHeader>
 
-            <Board board={current} onClick={handleClick} />
-          </div>
-
-          <div className="col">
-            <Log history={gameState.history} jumpTo={jumpTo} />
-          </div>
-        </div>
-      </div>
+      <Row>
+        <Column>
+          <Text>
+            {winner
+              ? `${winner} has won the game! To play again clik on "Start Game"`
+              : `Next player: ${xIsNext ? 'X' : 'O'}`}
+          </Text>
+          <Board board={current} onClick={handleClick} />
+        </Column>
+        <Log history={gameState.history} jumpTo={jumpTo} />
+      </Row>
     </div>
   );
 }

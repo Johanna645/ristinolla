@@ -8,12 +8,12 @@ type SquareProps = {
 };
 
 const StyledSquare = styled.button`
-  width: 5rem;
-  height: 5rem;
+  width: 15vh;
+  height: 15vh;
   background-color: #faf5a5;
-  border: 0.2rem solid #666363;
-  // padding: 0.1rem;
-  font-size: 3rem;
+  border: 0.2vh solid #666363;
+  padding: 0;
+  font-size: 13vh;
   font-weight: bold;
 `;
 
