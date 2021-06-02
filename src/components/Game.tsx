@@ -26,6 +26,7 @@ const Row = styled.div`
 `;
 
 const Column = styled.div`
+  margin-left: 20vh;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -48,12 +49,14 @@ function Game() {
         <Column>
           <Text>
             {winner
-              ? `${winner} has won the game! To play again clik on "Start Game"`
+              ? `${winner} has won the game!`
               : `Next player: ${xIsNext ? 'X' : 'O'}`}
           </Text>
           <Board board={current} onClick={handleClick} />
         </Column>
-        <Log history={gameState.history} jumpTo={jumpTo} />
+        <Column>
+          <Log history={gameState.history} jumpTo={jumpTo} />
+        </Column>
       </Row>
     </div>
   );

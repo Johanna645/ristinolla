@@ -1,4 +1,4 @@
-Work in progress... trying out combination of bootstrap and normal css for the layout
+Work in progress... trying out layout with styled components.
 
 This is a Tic-tac-toe-game with typescript.
 
